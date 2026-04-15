@@ -33,10 +33,10 @@ export default function Home() {
   ];
 
   const galeria = [
-    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/pasted_file_N0WoMX_image_65e0009b.png", titulo: "Barba Premium" },
-    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/pasted_file_N0WoMX_image_65e0009b.png", titulo: "Corte Moderno" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/barba1_ea1a17b0.png", titulo: "Barba Premium" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/corte1_1e211883.png", titulo: "Corte Moderno" },
     { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/trabalho1_cbb3ba20.png", titulo: "Trabalho em Detalhes" },
-    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/pasted_file_N0WoMX_image_65e0009b.png", titulo: "Acabamento Perfeito" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/barba3_f880113a.png", titulo: "Acabamento Perfeito" },
     { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/corte2_bfd648bc.png", titulo: "Corte Clássico" },
     { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/trabalho2_e483237d.png", titulo: "Estilo Urbano" },
   ];
