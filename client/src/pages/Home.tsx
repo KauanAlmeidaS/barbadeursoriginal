@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MapPin, Phone, Clock, Instagram, ExternalLink, Scissors, CreditCard, DollarSign, Zap, Star } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, ExternalLink, Scissors, CreditCard, DollarSign, Zap, Star, MessageCircle, X } from "lucide-react";
+import { useState } from "react";
 
 /**
  * DESIGN: Barba de Urso - Urbano, Funk e Classe
@@ -11,6 +12,8 @@ import { MapPin, Phone, Clock, Instagram, ExternalLink, Scissors, CreditCard, Do
  */
 
 export default function Home() {
+  const [showMap, setShowMap] = useState(false);
+
   const servicos = [
     { nome: "Corte", preco: 35, tempo: "40 min" },
     { nome: "Barba", preco: 25, tempo: "20 min" },
@@ -30,10 +33,10 @@ export default function Home() {
   ];
 
   const galeria = [
-    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/barba1_ea1a17b0.png", titulo: "Barba Premium" },
-    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/corte1_1e211883.png", titulo: "Corte Moderno" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/pasted_file_N0WoMX_image_65e0009b.png", titulo: "Barba Premium" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/pasted_file_N0WoMX_image_65e0009b.png", titulo: "Corte Moderno" },
     { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/trabalho1_cbb3ba20.png", titulo: "Trabalho em Detalhes" },
-    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/barba2_2d0da888.png", titulo: "Acabamento Perfeito" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/pasted_file_N0WoMX_image_65e0009b.png", titulo: "Acabamento Perfeito" },
     { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/corte2_bfd648bc.png", titulo: "Corte Clássico" },
     { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/trabalho2_e483237d.png", titulo: "Estilo Urbano" },
   ];
@@ -82,6 +85,16 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Botão WhatsApp Flutuante */}
+      <a 
+        href="https://wa.me/5531992901332?text=Oi%20Barba%20de%20Urso!%20Gostaria%20de%20agendar%20um%20horário"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </a>
+
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -99,11 +112,11 @@ export default function Home() {
             </div>
 
             <h2 className="text-5xl md:text-7xl font-black mb-6 text-white leading-tight">
-              CORTE COM <span className="text-[#D4A574]">FORÇA</span>
+              CORTE NA <span className="text-[#D4A574]">RISCA</span>
             </h2>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 font-semibold">
-              Barba impecável, corte moderno e estilo que fala. A Barba de Urso é onde a favela encontra a classe.
+              A Barba de Urso é onde a favela encontra a classe.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -130,11 +143,11 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {galeria.map((item, idx) => (
-              <div key={idx} className="group relative overflow-hidden rounded-lg card-urban p-0">
+              <div key={idx} className="group relative overflow-hidden rounded-lg card-urban p-0 h-64">
                 <img 
                   src={item.url} 
                   alt={item.titulo}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
                   <h3 className="text-lg font-black text-white">{item.titulo}</h3>
@@ -191,10 +204,10 @@ export default function Home() {
               </h2>
               <div className="w-20 h-1 bg-[#D4A574] mb-8"></div>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed font-semibold">
-                Fundador da Barba de Urso, um empreendedor que acredita em qualidade, tradição e estilo. Desde 2023, transformando vidas através de cortes impecáveis e atendimento de verdade.
+                Fundador da Barba de Urso, um empreendedor que acredita em qualidade. Desde 2023
               </p>
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                Cada cliente é uma oportunidade de mostrar que na favela também existe classe e profissionalismo. Barba de Urso é mais que uma barbearia, é um movimento.
+                Cada cliente é uma oportunidade de mostrar o mais puro profissionalismo. Barba de Urso é mais que uma barbearia.
               </p>
               <a href="https://www.instagram.com/barbadeursoriginal/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
                 SIGA NO INSTAGRAM <Instagram className="w-4 h-4" />
@@ -324,7 +337,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contato Section */}
+      {/* Contato Section com Mapa */}
       <section className="section-lg">
         <div className="container">
           <div className="mb-16">
@@ -340,10 +353,16 @@ export default function Home() {
                 <MapPin className="w-8 h-8 text-[#D4A574]" />
               </div>
               <h3 className="font-black text-lg mb-2 text-white">LOCALIZAÇÃO</h3>
-              <p className="text-gray-400">
+              <p className="text-gray-400 mb-4">
                 Rua José Isidoro Miranda, 1<br />
                 Maria Goretti - Belo Horizonte/MG
               </p>
+              <button 
+                onClick={() => setShowMap(!showMap)}
+                className="btn-secondary text-sm w-full"
+              >
+                {showMap ? "Fechar Mapa" : "Ver Mapa"}
+              </button>
             </div>
 
             <div className="card-urban text-center">
@@ -367,6 +386,26 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Mapa Interativo */}
+          {showMap && (
+            <div className="mb-12 card-urban p-0 overflow-hidden relative">
+              <button
+                onClick={() => setShowMap(false)}
+                className="absolute top-4 right-4 z-10 bg-[#D4A574] text-[#0A0A0A] p-2 rounded-full hover:bg-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <iframe
+                width="100%"
+                height="400"
+                style={{ border: 0 } as React.CSSProperties}
+                loading="lazy"
+                allowFullScreen
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8547484821316!2d-43.92450!3d-19.85250!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa3d5a1c1c1c1c1c1%3A0x1c1c1c1c1c1c1c1c!2sRua%20Jos%C3%A9%20Isidoro%20Miranda%2C%201%20-%20Maria%20Goretti%2C%20Belo%20Horizonte%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              ></iframe>
+            </div>
+          )}
 
           <div className="bg-[#D4A574]/10 border-2 border-[#D4A574] p-8 rounded-lg text-center">
             <h3 className="text-3xl font-black mb-4 text-white">AGENDE SEU HORÁRIO</h3>
