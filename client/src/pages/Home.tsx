@@ -63,7 +63,7 @@ export default function Home() {
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-urso_cfd1fe49.png" 
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-4k_b21d9d2f.jpg" 
               alt="Logo Barba de Urso" 
               className="w-14 h-14 object-contain animate-pulse-glow" 
             />
@@ -99,7 +99,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <div className="mb-8">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-urso_cfd1fe49.png" 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-4k_b21d9d2f.jpg" 
                 alt="Urso" 
                 className="w-32 h-32 md:w-48 md:h-48 object-contain drop-shadow-2xl" 
               />
@@ -412,7 +412,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <img 
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-urso_cfd1fe49.png" 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-4k_b21d9d2f.jpg" 
                 alt="Logo Barba de Urso" 
                 className="w-8 h-8 object-contain" 
               />
