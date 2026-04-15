@@ -43,8 +43,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-background border-b-2 border-primary">
         <div className="container flex items-center justify-between py-4 md:py-6">
           <div className="flex items-center gap-3">
-            <div className="w-14 h-14 bg-primary flex items-center justify-center border-2 border-accent">
-              <span className="text-2xl">🐻</span>
+            <div className="w-16 h-16 flex items-center justify-center">
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-urso_cfd1fe49.png" alt="Logo Urso do Corte" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <h1 className="text-lg md:text-xl font-bold text-foreground" style={{ fontFamily: "'Playfair Display', serif" }}>URSO</h1>
@@ -377,7 +377,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🐻</span>
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-urso_cfd1fe49.png" alt="Logo Urso do Corte" className="w-8 h-8 object-contain" />
               <p className="text-sm text-gray-500">© 2024 Barbearia Urso do Corte. Todos os direitos reservados.</p>
             </div>
             <div className="flex gap-6 text-sm text-gray-500">
