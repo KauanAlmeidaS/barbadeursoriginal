@@ -18,17 +18,14 @@ function Router() {
   );
 }
 
-// NOTE: Brutalism Contemporâneo Theme
-// - Dark background with warm accents (brown and gold)
-// - Bold typography with Playfair Display for headers
-// - Geometric elements and strategic spacing
-// - No rounded corners (radius: 0)
+// Landing Page Simples e Intuitiva
+// Paleta: Preto, Branco e Marrom
 
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="dark"
+        defaultTheme="light"
       >
         <TooltipProvider>
           <Toaster />
