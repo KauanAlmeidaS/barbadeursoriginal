@@ -57,7 +57,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] text-white relative" style={{
+      backgroundImage: `
+        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 165, 116, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(107, 79, 58, 0.04) 0%, transparent 50%)
+      `
+    }}>
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur border-b border-[#D4A574]/20">
         <div className="container flex items-center justify-between py-4">
