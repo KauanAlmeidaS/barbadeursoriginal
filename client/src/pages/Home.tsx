@@ -42,20 +42,17 @@ export default function Home() {
     {
       nome: "João Silva",
       texto: "Melhor barbearia de BH! Profissionais top demais, ambiente massa e o atendimento é de verdade.",
-      stars: 5,
-      foto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/ambiente1_dd04452e.png"
+      stars: 5
     },
     {
       nome: "Carlos Santos",
       texto: "Barba de Urso é referência! Qualidade premium com preço justo. Voltei mais 10 vezes!",
-      stars: 5,
-      foto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/ambiente2_95364d2f.png"
+      stars: 5
     },
     {
       nome: "Marcus Oliveira",
       texto: "Lugar com personalidade, barbeiros que entendem de corte. Recomendo demais!",
-      stars: 5,
-      foto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/detalhe1_d5f2381b.png"
+      stars: 5
     },
   ];
 
@@ -206,7 +203,7 @@ export default function Home() {
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
                 Cada cliente é uma oportunidade de mostrar o mais puro profissionalismo. Barba de Urso é mais que uma barbearia.
               </p>
-              <a href="https://www.instagram.com/barbadeursoriginal/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+              <a href="https://www.instagram.com/ursodepaiva/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
                 SIGA NO INSTAGRAM <Instagram className="w-4 h-4" />
               </a>
             </div>
@@ -234,19 +231,12 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {depoimentos.map((dep, idx) => (
               <div key={idx} className="card-urban">
-                <div className="flex items-center gap-4 mb-4">
-                  <img 
-                    src={dep.foto}
-                    alt={dep.nome}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <h3 className="font-black text-white">{dep.nome}</h3>
-                    <div className="flex gap-1">
-                      {[...Array(dep.stars)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#D4A574] text-[#D4A574]" />
-                      ))}
-                    </div>
+                <div className="mb-4">
+                  <h3 className="font-black text-white mb-2">{dep.nome}</h3>
+                  <div className="flex gap-1">
+                    {[...Array(dep.stars)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-[#D4A574] text-[#D4A574]" />
+                    ))}
                   </div>
                 </div>
                 <p className="text-gray-300 italic">"{dep.texto}"</p>
