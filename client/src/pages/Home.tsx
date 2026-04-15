@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { MapPin, Phone, Clock, Instagram, ExternalLink, Scissors, CreditCard, DollarSign, Zap, Star, MessageCircle, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 /**
  * DESIGN: Barba de Urso - Urbano, Funk e Classe
@@ -11,8 +11,49 @@ import { useState } from "react";
  * - O Urso é o destaque visual
  */
 
+// Hook para detectar quando elemento entra na viewport
+function useInView(ref: React.RefObject<HTMLDivElement | null>) {
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [ref]);
+
+  return isInView;
+}
+
 export default function Home() {
   const [showMap, setShowMap] = useState(false);
+
+  const galeryRef = useRef<HTMLDivElement>(null);
+  const catalogRef = useRef<HTMLDivElement>(null);
+  const donoRef = useRef<HTMLDivElement>(null);
+  const depoRef = useRef<HTMLDivElement>(null);
+  const whyRef = useRef<HTMLDivElement>(null);
+  const pagamentoRef = useRef<HTMLDivElement>(null);
+  const contatoRef = useRef<HTMLDivElement>(null);
+
+  const galeryInView = useInView(galeryRef);
+  const catalogInView = useInView(catalogRef);
+  const donoInView = useInView(donoRef);
+  const depoInView = useInView(depoRef);
+  const whyInView = useInView(whyRef);
+  const pagamentoInView = useInView(pagamentoRef);
+  const contatoInView = useInView(contatoRef);
 
   const servicos = [
     { nome: "Corte", preco: 35, tempo: "40 min" },
@@ -132,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* Galeria de Trabalhos */}
-      <section className="section-lg">
+      <section ref={galeryRef} className={`section-lg transition-all duration-1000 ${galeryInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -159,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Catálogo Completo */}
-      <section id="servicos" className="section-lg bg-[#1A1A1A]/50">
+      <section ref={catalogRef} id="servicos" className={`section-lg bg-[#000000]/50 transition-all duration-1000 ${catalogInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -193,9 +234,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Seção do Dono */}
-      <section className="section-lg">
+      {/* Conheça o Dono */}
+      <section ref={donoRef} className={`section-lg transition-all duration-1000 ${donoInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -225,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Depoimentos */}
-      <section className="section-lg bg-[#1A1A1A]/50">
+      <section ref={depoRef} className={`section-lg bg-[#000000]/50 transition-all duration-1000 ${depoInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -252,8 +292,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Por que escolher */}
-      <section className="section-lg">
+      {/* Por que Barba de Urso */}
+      <section ref={whyRef} className={`section-lg transition-all duration-1000 ${whyInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -307,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* Formas de Pagamento */}
-      <section className="section-lg bg-[#1A1A1A]/50">
+      <section ref={pagamentoRef} className={`section-lg bg-[#000000]/50 transition-all duration-1000 ${pagamentoInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -331,7 +371,7 @@ export default function Home() {
       </section>
 
       {/* Contato Section com Mapa */}
-      <section className="section-lg">
+      <section ref={contatoRef} className={`section-lg transition-all duration-1000 ${contatoInView ? 'opacity-100' : 'opacity-0'}`}>
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
