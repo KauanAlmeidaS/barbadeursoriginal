@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MapPin, Phone, Clock, Instagram, ExternalLink, Scissors, CreditCard, DollarSign, Zap } from "lucide-react";
+import { MapPin, Phone, Clock, Instagram, ExternalLink, Scissors, CreditCard, DollarSign, Zap, Star } from "lucide-react";
 
 /**
  * DESIGN: Barba de Urso - Urbano, Funk e Classe
@@ -27,6 +27,36 @@ export default function Home() {
     { nome: "Cartão de Crédito", icon: CreditCard },
     { nome: "Cartão de Débito", icon: CreditCard },
     { nome: "Pix", icon: Zap },
+  ];
+
+  const galeria = [
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/barba1_ea1a17b0.png", titulo: "Barba Premium" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/corte1_1e211883.png", titulo: "Corte Moderno" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/trabalho1_cbb3ba20.png", titulo: "Trabalho em Detalhes" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/barba2_2d0da888.png", titulo: "Acabamento Perfeito" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/corte2_bfd648bc.png", titulo: "Corte Clássico" },
+    { url: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/trabalho2_e483237d.png", titulo: "Estilo Urbano" },
+  ];
+
+  const depoimentos = [
+    {
+      nome: "João Silva",
+      texto: "Melhor barbearia de BH! Profissionais top demais, ambiente massa e o atendimento é de verdade.",
+      stars: 5,
+      foto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/ambiente1_dd04452e.png"
+    },
+    {
+      nome: "Carlos Santos",
+      texto: "Barba de Urso é referência! Qualidade premium com preço justo. Voltei mais 10 vezes!",
+      stars: 5,
+      foto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/ambiente2_95364d2f.png"
+    },
+    {
+      nome: "Marcus Oliveira",
+      texto: "Lugar com personalidade, barbeiros que entendem de corte. Recomendo demais!",
+      stars: 5,
+      foto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/detalhe1_d5f2381b.png"
+    },
   ];
 
   return (
@@ -88,8 +118,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Galeria de Trabalhos */}
+      <section className="section-lg">
+        <div className="container">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
+              GALERIA DE <span className="text-[#D4A574]">TRABALHOS</span>
+            </h2>
+            <div className="w-20 h-1 bg-[#D4A574]"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {galeria.map((item, idx) => (
+              <div key={idx} className="group relative overflow-hidden rounded-lg card-urban p-0">
+                <img 
+                  src={item.url} 
+                  alt={item.titulo}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+                  <h3 className="text-lg font-black text-white">{item.titulo}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Catálogo Completo */}
-      <section id="servicos" className="section-lg">
+      <section id="servicos" className="section-lg bg-[#1A1A1A]/50">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -124,8 +181,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Por que escolher */}
+      {/* Seção do Dono */}
+      <section className="section-lg">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
+                CONHEÇA O <span className="text-[#D4A574]">DONO</span>
+              </h2>
+              <div className="w-20 h-1 bg-[#D4A574] mb-8"></div>
+              <p className="text-lg text-gray-300 mb-6 leading-relaxed font-semibold">
+                Fundador da Barba de Urso, um empreendedor que acredita em qualidade, tradição e estilo. Desde 2023, transformando vidas através de cortes impecáveis e atendimento de verdade.
+              </p>
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                Cada cliente é uma oportunidade de mostrar que na favela também existe classe e profissionalismo. Barba de Urso é mais que uma barbearia, é um movimento.
+              </p>
+              <a href="https://www.instagram.com/barbadeursoriginal/" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+                SIGA NO INSTAGRAM <Instagram className="w-4 h-4" />
+              </a>
+            </div>
+            <div>
+              <img 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/ursoimg_a2b0dbb8.png"
+                alt="Dono da Barba de Urso"
+                className="w-full rounded-lg card-urban p-0 overflow-hidden"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Depoimentos */}
       <section className="section-lg bg-[#1A1A1A]/50">
+        <div className="container">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
+              O QUE NOSSOS <span className="text-[#D4A574]">CLIENTES</span> DIZEM
+            </h2>
+            <div className="w-20 h-1 bg-[#D4A574]"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {depoimentos.map((dep, idx) => (
+              <div key={idx} className="card-urban">
+                <div className="flex items-center gap-4 mb-4">
+                  <img 
+                    src={dep.foto}
+                    alt={dep.nome}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="font-black text-white">{dep.nome}</h3>
+                    <div className="flex gap-1">
+                      {[...Array(dep.stars)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-[#D4A574] text-[#D4A574]" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-300 italic">"{dep.texto}"</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Por que escolher */}
+      <section className="section-lg">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -179,7 +301,7 @@ export default function Home() {
       </section>
 
       {/* Formas de Pagamento */}
-      <section className="section-lg">
+      <section className="section-lg bg-[#1A1A1A]/50">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
@@ -203,7 +325,7 @@ export default function Home() {
       </section>
 
       {/* Contato Section */}
-      <section className="section-lg bg-[#1A1A1A]/50">
+      <section className="section-lg">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
