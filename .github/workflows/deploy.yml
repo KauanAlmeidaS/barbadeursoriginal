@@ -34,4 +34,5 @@ jobs:
       with:
         folder: dist/public
         branch: gh-pages
+        clean: true
         token: ${{ secrets.GITHUB_TOKEN }}
