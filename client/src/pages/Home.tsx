@@ -108,16 +108,9 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#0A0A0A]/95 backdrop-blur border-b border-[#D4A574]/20">
         <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
-            <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663560035963/ivKCHtyhbsoXaVap9saFu3/logo-urso_cfd1fe49.png" 
-              alt="Logo Barba de Urso" 
-              className="w-14 h-14 object-contain animate-pulse-glow" 
-            />
-            <div>
-              <h1 className="text-2xl font-black text-white">BARBA DE URSO</h1>
-              <p className="text-xs text-[#D4A574] font-bold">BARBEARIA PREMIUM</p>
-            </div>
+          <div>
+            <h1 className="text-2xl font-black text-white">BARBA DE URSO</h1>
+            <p className="text-xs text-[#D4A574] font-bold">BARBEARIA PREMIUM</p>
           </div>
 
           <a href="https://sites.appbarber.com.br/barbeariaursodocorte-z02c" target="_blank" rel="noopener noreferrer" className="btn-primary">
