@@ -5,20 +5,18 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [22.x]
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v4
     
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '22.x'
     
     - name: Install pnpm
       run: npm install -g pnpm
@@ -30,8 +28,8 @@ jobs:
       run: pnpm build
     
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/public
-        cname: 
+        folder: dist/public
+        branch: gh-pages
+        token: ${{ secrets.GITHUB_TOKEN }}
